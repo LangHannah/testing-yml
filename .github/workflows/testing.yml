@@ -1,8 +1,6 @@
 name: testing-yaml
 
 on:
-  schedule:
-    - cron: '1 * * * *'
   workflow_dispatch: 
     
 jobs: 
@@ -10,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first-step
-        run: echo: "hello world"
+        run: echo "hello world"
