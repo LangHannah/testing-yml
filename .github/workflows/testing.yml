@@ -24,6 +24,6 @@ jobs:
         R -e 'install.packages("DT")'
         R -e 'install.packages("plotly")'
     - name: Render document
-      run: Forecast-visuualization/retrospective-evaluation/Death_Forecasts_WIS_Eval_ga_test.Rmd
+      run: Forecast-visualization/retrospective-evaluation/Death_Forecasts_WIS_Eval_ga_test.Rmd
 
 
