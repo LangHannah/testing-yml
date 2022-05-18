@@ -1,11 +1,29 @@
 name: testing-yaml
 
 on:
+  #schedule:
+    #- cron: '* * * * *'
   workflow_dispatch: 
     
-jobs: 
-  my-job:
+jobs:
+  wis-death-evals:
     runs-on: ubuntu-latest
+    
+    env: 
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      
     steps:
-      - name: first-step
-        run: echo "hello world"
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@master
+ 
+    - name: Install packages
+      run: |
+        R -e 'install.packages("tidyverse")'
+        R -e 'install.packages("epiDisplay")'
+        R -e 'install.packages("MMWRweek")'
+        R -e 'install.packages("DT")'
+        R -e 'install.packages("plotly")'
+    - name: Render document
+      run: Forecast-visuualization/retrospective-evaluation/Death_Forecasts_WIS_Eval_ga_test.Rmd
+
+
