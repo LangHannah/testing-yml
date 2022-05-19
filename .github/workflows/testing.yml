@@ -29,7 +29,7 @@ jobs:
     - name: Install rmarkdown
       run: Rscript -e 'install.packages("rmarkdown")'
     - name: Render README
-      run: Rscript -e 'rmarkdown::render("testing.rmd")'
+      run: Rscript -e 'rmarkdown::render("testing.rmd", output_format = "html_document")'
     - name: Commit results
       run: |
         git commit testing.md -m 'Testing md' || echo "No changes to commit"
