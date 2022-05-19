@@ -32,7 +32,7 @@ jobs:
       run: Rscript -e 'rmarkdown::render("testing.rmd", output_format = "html_document")'
     - name: Commit results
       run: |
-        git commit testing.md -m 'Testing md' || echo "No changes to commit"
+        git commit testing.html -m 'Testing html' || echo "No changes to commit"
         git push origin || echo "No changes to commit"
 
 
