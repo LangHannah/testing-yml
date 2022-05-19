@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env: 
-      GITHUB_PAT: ${{ testingsecret }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       
     steps:
     - uses: actions/checkout@master
