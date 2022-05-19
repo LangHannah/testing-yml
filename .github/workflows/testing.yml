@@ -24,7 +24,7 @@ jobs:
        # R -e 'install.packages("DT")'
        # R -e 'install.packages("plotly")'
     - name: Render document
-      run: |
-        source("testing.rmd")
-
-
+      uses: lc5415/rmarkdown-action@v1
+      with:
+        input_file: testing.rmd
+	      output_format: html_document
