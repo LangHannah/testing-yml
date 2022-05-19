@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
+    - uses: r-lib/actions/setup-pandoc@v1
  
     - name: Install packages
       run: |
@@ -23,8 +24,11 @@ jobs:
        # R -e 'install.packages("MMWRweek")'
        # R -e 'install.packages("DT")'
        # R -e 'install.packages("plotly")'
-    - name: Render document
-      uses: lc5415/rmarkdown-action@v1
-      with:
-        input_file: testing.rmd
+       
+       
+    - name: Install rmarkdown
+      run: Rscript -e 'install.packages("rmarkdown")'
+    - name: Render README
+      run: Rscript -e 'rmarkdown::render("testing.rmd")'
+
 
