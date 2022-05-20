@@ -34,7 +34,7 @@ jobs:
       run: |
         git config --local user.name "$GITHUB_ACTOR"
         git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        git commit testing.md -m 'Testing html' || echo "No changes to commit"
+        git commit testing.html -m 'Testing html' || echo "No changes to commit"
         git push origin || echo "No changes to commit"
 
 
